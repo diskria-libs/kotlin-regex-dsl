@@ -1,0 +1,39 @@
+name: Release to Maven Central
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GPG_KEY: ${{ secrets.GPG_KEY }}
+      GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+
+      - name: Build staging repo
+        run: ./gradlew clean publish --stacktrace
+
+      - name: Create bundle
+        run: |
+          cd build/staging-repo
+          zip -r ../bundle.zip .
+
+      - name: Upload bundle to Sonatype Central
+        run: |
+          BEARER=$(echo -n "${{ secrets.SONATYPE_USERNAME }}:${{ secrets.SONATYPE_PASSWORD }}" | base64)
+          curl --fail --request POST \
+            --header "Authorization: Bearer $BEARER" \
+            --form bundle=@build/bundle.zip \
+            "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC"

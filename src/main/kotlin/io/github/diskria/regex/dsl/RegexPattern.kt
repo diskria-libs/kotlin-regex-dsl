@@ -1,15 +1,15 @@
-package io.github.diskria.dsl.regex
+package io.github.diskria.regex.dsl
 
-import io.github.diskria.dsl.regex.extensions.buildRegexPattern
-import io.github.diskria.dsl.regex.extensions.replaceRegex
-import io.github.diskria.dsl.regex.extensions.toRegexPattern
-import io.github.diskria.dsl.regex.primitives.RegexAnyChar
-import io.github.diskria.dsl.regex.primitives.RegexEscapeEnd
-import io.github.diskria.dsl.regex.primitives.RegexEscapeStart
+import io.github.diskria.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.regex.dsl.extensions.replaceRegex
+import io.github.diskria.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.regex.dsl.primitives.RegexAnyChar
+import io.github.diskria.regex.dsl.primitives.RegexEscapeEnd
+import io.github.diskria.regex.dsl.primitives.RegexEscapeStart
 import io.github.diskria.utils.kotlin.BracketsType
 import io.github.diskria.utils.kotlin.Constants
 import io.github.diskria.utils.kotlin.EscapeMode
-import io.github.diskria.utils.kotlin.delegates.toAutoNamedPair
+import io.github.diskria.utils.kotlin.properties.toAutoNamedProperty
 import io.github.diskria.utils.kotlin.extensions.common.failWithDetails
 import io.github.diskria.utils.kotlin.extensions.common.failWithWrongUsage
 import io.github.diskria.utils.kotlin.extensions.common.modifyIf
@@ -38,8 +38,8 @@ class RegexPattern(internal val rawPattern: String) {
         when {
             min == null && max == null -> failWithWrongUsage(useInsteadThis = "zeroOrMore()")
             min != null && max != null && min > max -> {
-                val min by min.toAutoNamedPair()
-                val max by max.toAutoNamedPair()
+                val min by min.toAutoNamedProperty()
+                val max by max.toAutoNamedProperty()
                 failWithDetails("max must be > min", min, max)
             }
 

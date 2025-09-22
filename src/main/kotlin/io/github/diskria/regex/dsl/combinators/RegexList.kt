@@ -1,9 +1,9 @@
-package io.github.diskria.dsl.regex.combinators
+package io.github.diskria.regex.dsl.combinators
 
-import io.github.diskria.dsl.regex.RegexPattern
-import io.github.diskria.dsl.regex.extensions.buildRegexPattern
-import io.github.diskria.dsl.regex.extensions.toRegexPattern
-import io.github.diskria.dsl.regex.groups.RegexGroup
+import io.github.diskria.regex.dsl.RegexPattern
+import io.github.diskria.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.regex.dsl.groups.RegexGroup
 import io.github.diskria.utils.kotlin.Constants
 
 object RegexList {

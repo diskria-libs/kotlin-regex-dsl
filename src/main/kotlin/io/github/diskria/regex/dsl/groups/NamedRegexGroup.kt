@@ -1,6 +1,6 @@
-package io.github.diskria.dsl.regex.groups
+package io.github.diskria.regex.dsl.groups
 
-import io.github.diskria.dsl.regex.RegexPattern
+import io.github.diskria.regex.dsl.RegexPattern
 
 class NamedRegexGroup(
     val name: String,

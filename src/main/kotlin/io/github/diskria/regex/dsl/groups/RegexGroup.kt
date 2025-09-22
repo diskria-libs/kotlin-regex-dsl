@@ -1,11 +1,11 @@
-package io.github.diskria.dsl.regex.groups
+package io.github.diskria.regex.dsl.groups
 
-import io.github.diskria.dsl.regex.RegexPattern
-import io.github.diskria.dsl.regex.extensions.buildRegexPattern
-import io.github.diskria.dsl.regex.extensions.toRegexPattern
-import io.github.diskria.dsl.regex.primitives.RegexCharacterClass
-import io.github.diskria.dsl.regex.primitives.RegexWord
-import io.github.diskria.dsl.regex.ranges.RegexCharacterRange
+import io.github.diskria.regex.dsl.RegexPattern
+import io.github.diskria.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.regex.dsl.primitives.RegexCharacterClass
+import io.github.diskria.regex.dsl.primitives.RegexWord
+import io.github.diskria.regex.dsl.ranges.RegexCharacterRange
 import io.github.diskria.utils.kotlin.BracketsType
 import io.github.diskria.utils.kotlin.Constants
 import io.github.diskria.utils.kotlin.extensions.common.failWithInvalidValue
