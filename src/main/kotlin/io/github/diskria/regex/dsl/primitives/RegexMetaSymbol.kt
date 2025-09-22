@@ -1,9 +1,10 @@
-package io.github.diskria.dsl.regex.primitives
+package io.github.diskria.regex.dsl.primitives
 
-import io.github.diskria.dsl.regex.RegexPattern
+import io.github.diskria.regex.dsl.RegexPattern
 
 object RegexMetaSymbol {
-    fun newInstance(char: Char): RegexPattern = RegexPattern(char.toString())
+    fun newInstance(char: Char): RegexPattern =
+        RegexPattern(char.toString())
 }
 
 val RegexStartOfLine = RegexMetaSymbol.newInstance('^')

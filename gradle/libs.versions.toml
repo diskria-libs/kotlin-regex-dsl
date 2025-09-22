@@ -1,12 +1,12 @@
 [versions]
-gradle = "9.0.0"
-java = "21"
-kotlin = "2.2.0"
-dokka = "2.0.0"
+projektor = "1.+"
 
-[libraries]
-kotlin-utils = { group = "io.github.diskria", name = "kotlin-utils", version = "0.1.0" }
+kotlin = "2.2.0"
+kotlin-utils = "0.4.1"
 
 [plugins]
+projektor = { id = "io.github.diskria.projektor", version.ref = "projektor" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+
+[libraries]
+kotlin-utils = { group = "io.github.diskria", name = "kotlin-utils", version.ref = "kotlin-utils" }

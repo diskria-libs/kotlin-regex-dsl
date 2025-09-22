@@ -1,9 +1,9 @@
-package io.github.diskria.dsl.regex.combinators
+package io.github.diskria.regex.dsl.combinators
 
-import io.github.diskria.dsl.regex.RegexPattern
-import io.github.diskria.dsl.regex.extensions.toRegexPattern
-import io.github.diskria.dsl.regex.primitives.RegexEndOfLine
-import io.github.diskria.dsl.regex.primitives.RegexStartOfLine
+import io.github.diskria.regex.dsl.RegexPattern
+import io.github.diskria.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.regex.dsl.primitives.RegexEndOfLine
+import io.github.diskria.regex.dsl.primitives.RegexStartOfLine
 
 object RegexLine {
 

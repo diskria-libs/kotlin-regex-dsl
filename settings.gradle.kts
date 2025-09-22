@@ -1,24 +1,14 @@
-rootProject.name = "kotlin-regex-dsl"
+import io.github.diskria.projektor.extensions.configureProject
 
-fun RepositoryHandler.attachCommonRepositories() {
-    mavenCentral()
-    google()
-}
-
-fun RepositoryHandler.attachPluginRepositories() {
-    gradlePluginPortal()
-}
-
-@Suppress("UnstableApiUsage")
-fun setupRepositories() {
-    dependencyResolutionManagement.repositories {
-        attachCommonRepositories()
-    }
-
-    pluginManagement.repositories {
-        attachCommonRepositories()
-        attachPluginRepositories()
+pluginManagement {
+    repositories {
+        mavenCentral()
+        maven("https://diskria.github.io/projektor")
     }
 }
 
-setupRepositories()
+plugins {
+    id("io.github.diskria.projektor.settings") version "1.+"
+}
+
+configureProject()

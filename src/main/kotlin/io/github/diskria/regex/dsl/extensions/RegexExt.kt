@@ -1,10 +1,10 @@
-package io.github.diskria.dsl.regex.extensions
+package io.github.diskria.regex.dsl.extensions
 
-import io.github.diskria.dsl.regex.RegexPattern
-import io.github.diskria.dsl.regex.groups.RegexGroup
-import io.github.diskria.dsl.regex.primitives.RegexCharacterClass
-import io.github.diskria.dsl.regex.ranges.RegexLatinLowercaseRange
-import io.github.diskria.dsl.regex.ranges.RegexLatinUppercaseRange
+import io.github.diskria.regex.dsl.RegexPattern
+import io.github.diskria.regex.dsl.groups.RegexGroup
+import io.github.diskria.regex.dsl.primitives.RegexCharacterClass
+import io.github.diskria.regex.dsl.ranges.RegexLatinLowercaseRange
+import io.github.diskria.regex.dsl.ranges.RegexLatinUppercaseRange
 import io.github.diskria.utils.kotlin.Constants
 import io.github.diskria.utils.kotlin.extensions.collapseRepeating
 import io.github.diskria.utils.kotlin.extensions.generics.foldChain

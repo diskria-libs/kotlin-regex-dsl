@@ -1,7 +1,7 @@
-package io.github.diskria.dsl.regex.patterns
+package io.github.diskria.regex.dsl.patterns
 
-import io.github.diskria.dsl.regex.RegexPattern
-import io.github.diskria.dsl.regex.extensions.toRegexPattern
+import io.github.diskria.regex.dsl.RegexPattern
+import io.github.diskria.regex.dsl.extensions.toRegexPattern
 import io.github.diskria.utils.kotlin.BracketsType
 import io.github.diskria.utils.kotlin.Constants
 import io.github.diskria.utils.kotlin.extensions.wrapWithBrackets
