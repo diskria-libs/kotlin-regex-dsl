@@ -25,15 +25,22 @@ jobs:
       - name: Build staging repo
         run: ./gradlew clean publish --stacktrace
 
+      - name: Detect main jar name
+        id: jar
+        run: |
+          JAR_FILE=$(ls build/libs/*.jar | awk '{ print length, $0 }' | sort -n | head -n1 | cut -d" " -f2-)
+          JAR_BASENAME=$(basename "$JAR_FILE" .jar)
+          echo "basename=$JAR_BASENAME" >> $GITHUB_OUTPUT
+
       - name: Create bundle
         run: |
           cd build/staging-repo
-          zip -r ../bundle.zip .
+          zip -r "../${{ steps.jar.outputs.basename }}.zip" .
 
       - name: Upload bundle to Sonatype Central
         run: |
           BEARER=$(echo -n "${{ secrets.SONATYPE_USERNAME }}:${{ secrets.SONATYPE_PASSWORD }}" | base64)
           curl --fail --request POST \
             --header "Authorization: Bearer $BEARER" \
-            --form bundle=@build/bundle.zip \
+            --form bundle=@build/${{ steps.jar.outputs.basename }}.zip \
             "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC"
