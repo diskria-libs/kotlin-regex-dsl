@@ -1,12 +1,6 @@
 package io.github.diskria.kotlin.regex.dsl.extensions
 
 import io.github.diskria.kotlin.regex.dsl.RegexPattern
-import io.github.diskria.kotlin.regex.dsl.groups.RegexGroup
-import io.github.diskria.kotlin.regex.dsl.primitives.RegexCharacterClass
-import io.github.diskria.kotlin.regex.dsl.ranges.RegexLatinLowercaseRange
-import io.github.diskria.kotlin.regex.dsl.ranges.RegexLatinUppercaseRange
-import io.github.diskria.kotlin.utils.Constants
-import io.github.diskria.kotlin.utils.extensions.collapseRepeating
 import io.github.diskria.kotlin.utils.extensions.generics.foldChain
 
 operator fun MatchResult?.component1(): MatchGroup? = this?.groups?.getOrNull(0)
@@ -67,33 +61,3 @@ fun String.replaceRegex(regexPattern: RegexPattern, transform: (String) -> CharS
 
 fun String.findAllRegexGroupValues(regex: Regex): Sequence<String> =
     regex.findAll(this).map { matchResult -> matchResult.value }
-
-fun String.toSnakeCase(isUppercase: Boolean): String {
-    val lowercaseCharacterClass = RegexCharacterClass.of(RegexLatinLowercaseRange)
-    val uppercaseCharacterClass = RegexCharacterClass.of(RegexLatinUppercaseRange)
-    val abbreviationsJoint = buildRegexPattern {
-        append(RegexGroup.ofCaptured(uppercaseCharacterClass.oneOrMore()))
-        append(
-            RegexGroup.ofCaptured(
-                buildRegexPattern {
-                    append(uppercaseCharacterClass)
-                    append(lowercaseCharacterClass)
-                }
-            )
-        )
-    }
-    val wordsJoint = buildRegexPattern {
-        append(RegexGroup.ofCaptured(lowercaseCharacterClass))
-        append(RegexGroup.ofCaptured(uppercaseCharacterClass))
-    }
-    return this
-        .replaceRegexes(abbreviationsJoint, wordsJoint) { _, (previousWordEnd, nextWordStart) ->
-            previousWordEnd + Constants.Char.UNDERSCORE + nextWordStart
-        }
-        .collapseRepeating(Constants.Char.UNDERSCORE.toString())
-        .trim(Constants.Char.UNDERSCORE)
-        .run {
-            if (isUppercase) uppercase()
-            else lowercase()
-        }
-}
