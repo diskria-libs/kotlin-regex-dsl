@@ -1,13 +1,13 @@
-package io.github.diskria.regex.dsl.groups
+package io.github.diskria.kotlin.regex.dsl.groups
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.regex.dsl.primitives.RegexNamedGroupBackReference
-import io.github.diskria.utils.kotlin.BracketsType
-import io.github.diskria.utils.kotlin.Constants
-import io.github.diskria.utils.kotlin.extensions.common.failWithDetails
-import io.github.diskria.utils.kotlin.extensions.common.failWithInvalidValue
-import io.github.diskria.utils.kotlin.extensions.wrapWithBrackets
-import io.github.diskria.utils.kotlin.properties.toAutoNamedProperty
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexNamedGroupBackReference
+import io.github.diskria.kotlin.utils.BracketsType
+import io.github.diskria.kotlin.utils.Constants
+import io.github.diskria.kotlin.utils.extensions.common.failWithDetails
+import io.github.diskria.kotlin.utils.extensions.common.failWithInvalidValue
+import io.github.diskria.kotlin.utils.extensions.wrapWithBrackets
+import io.github.diskria.kotlin.utils.properties.toAutoNamedProperty
 
 object RegexBackReference {
 

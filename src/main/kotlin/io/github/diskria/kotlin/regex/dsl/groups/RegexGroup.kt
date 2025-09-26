@@ -1,16 +1,16 @@
-package io.github.diskria.regex.dsl.groups
+package io.github.diskria.kotlin.regex.dsl.groups
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.regex.dsl.extensions.buildRegexPattern
-import io.github.diskria.regex.dsl.extensions.toRegexPattern
-import io.github.diskria.regex.dsl.primitives.RegexCharacterClass
-import io.github.diskria.regex.dsl.primitives.RegexWord
-import io.github.diskria.regex.dsl.ranges.RegexCharacterRange
-import io.github.diskria.utils.kotlin.BracketsType
-import io.github.diskria.utils.kotlin.Constants
-import io.github.diskria.utils.kotlin.extensions.common.failWithInvalidValue
-import io.github.diskria.utils.kotlin.extensions.common.modify
-import io.github.diskria.utils.kotlin.extensions.wrapWithBrackets
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexCharacterClass
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexWord
+import io.github.diskria.kotlin.regex.dsl.ranges.RegexCharacterRange
+import io.github.diskria.kotlin.utils.BracketsType
+import io.github.diskria.kotlin.utils.Constants
+import io.github.diskria.kotlin.utils.extensions.common.failWithInvalidValue
+import io.github.diskria.kotlin.utils.extensions.common.modify
+import io.github.diskria.kotlin.utils.extensions.wrapWithBrackets
 
 object RegexGroup {
 

@@ -1,7 +1,7 @@
-package io.github.diskria.regex.dsl.ranges
+package io.github.diskria.kotlin.regex.dsl.ranges
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.utils.kotlin.Constants
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.utils.Constants
 
 object RegexCharacterRange {
 

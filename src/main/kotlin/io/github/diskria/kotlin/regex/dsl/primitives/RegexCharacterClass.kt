@@ -1,13 +1,13 @@
-package io.github.diskria.regex.dsl.primitives
+package io.github.diskria.kotlin.regex.dsl.primitives
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.regex.dsl.extensions.toRegexPattern
-import io.github.diskria.utils.kotlin.BracketsType
-import io.github.diskria.utils.kotlin.Constants
-import io.github.diskria.utils.kotlin.EscapeMode
-import io.github.diskria.utils.kotlin.extensions.common.modifyIf
-import io.github.diskria.utils.kotlin.extensions.generics.toFlatString
-import io.github.diskria.utils.kotlin.extensions.primitives.escaped
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.kotlin.utils.BracketsType
+import io.github.diskria.kotlin.utils.Constants
+import io.github.diskria.kotlin.utils.EscapeMode
+import io.github.diskria.kotlin.utils.extensions.common.modifyIf
+import io.github.diskria.kotlin.utils.extensions.generics.toFlatString
+import io.github.diskria.kotlin.utils.extensions.primitives.escaped
 
 object RegexCharacterClass {
 

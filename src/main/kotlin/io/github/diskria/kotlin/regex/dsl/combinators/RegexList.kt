@@ -1,10 +1,10 @@
-package io.github.diskria.regex.dsl.combinators
+package io.github.diskria.kotlin.regex.dsl.combinators
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.regex.dsl.extensions.buildRegexPattern
-import io.github.diskria.regex.dsl.extensions.toRegexPattern
-import io.github.diskria.regex.dsl.groups.RegexGroup
-import io.github.diskria.utils.kotlin.Constants
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.kotlin.regex.dsl.groups.RegexGroup
+import io.github.diskria.kotlin.utils.Constants
 
 object RegexList {
 

@@ -1,16 +1,14 @@
-package io.github.diskria.regex.dsl.extensions
+package io.github.diskria.kotlin.regex.dsl.extensions
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.regex.dsl.groups.RegexGroup
-import io.github.diskria.regex.dsl.primitives.RegexCharacterClass
-import io.github.diskria.regex.dsl.ranges.RegexLatinLowercaseRange
-import io.github.diskria.regex.dsl.ranges.RegexLatinUppercaseRange
-import io.github.diskria.utils.kotlin.Constants
-import io.github.diskria.utils.kotlin.extensions.collapseRepeating
-import io.github.diskria.utils.kotlin.extensions.generics.foldChain
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.groups.RegexGroup
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexCharacterClass
+import io.github.diskria.kotlin.regex.dsl.ranges.RegexLatinLowercaseRange
+import io.github.diskria.kotlin.regex.dsl.ranges.RegexLatinUppercaseRange
+import io.github.diskria.kotlin.utils.Constants
+import io.github.diskria.kotlin.utils.extensions.collapseRepeating
+import io.github.diskria.kotlin.utils.extensions.generics.foldChain
 
-// region Template <lines = 8>
-// operator fun MatchResult?.component{{ lineIndex + 1 }}(): MatchGroup? = this?.groups?.getOrNull({{ lineIndex }})
 operator fun MatchResult?.component1(): MatchGroup? = this?.groups?.getOrNull(0)
 operator fun MatchResult?.component2(): MatchGroup? = this?.groups?.getOrNull(1)
 operator fun MatchResult?.component3(): MatchGroup? = this?.groups?.getOrNull(2)
@@ -19,13 +17,10 @@ operator fun MatchResult?.component5(): MatchGroup? = this?.groups?.getOrNull(4)
 operator fun MatchResult?.component6(): MatchGroup? = this?.groups?.getOrNull(5)
 operator fun MatchResult?.component7(): MatchGroup? = this?.groups?.getOrNull(6)
 operator fun MatchResult?.component8(): MatchGroup? = this?.groups?.getOrNull(7)
-// endregion Template
 
 @JvmInline
 value class MatchGroupValues(val matchResult: MatchResult)
 
-// region Template <lines = 7>
-// operator fun MatchGroupValues.component{{ lineIndex + 1 }}(): String? = matchResult.component{{ lineIndex + 2 }}()?.value
 operator fun MatchGroupValues.component1(): String? = matchResult.component2()?.value
 operator fun MatchGroupValues.component2(): String? = matchResult.component3()?.value
 operator fun MatchGroupValues.component3(): String? = matchResult.component4()?.value
@@ -33,7 +28,6 @@ operator fun MatchGroupValues.component4(): String? = matchResult.component5()?.
 operator fun MatchGroupValues.component5(): String? = matchResult.component6()?.value
 operator fun MatchGroupValues.component6(): String? = matchResult.component7()?.value
 operator fun MatchGroupValues.component7(): String? = matchResult.component8()?.value
-// endregion Template
 
 fun MatchGroupCollection.getOrNull(index: Int): MatchGroup? =
     if (index in indices) get(index)

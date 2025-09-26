@@ -1,10 +1,10 @@
-package io.github.diskria.regex.dsl.patterns
+package io.github.diskria.kotlin.regex.dsl.patterns
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.regex.dsl.extensions.toRegexPattern
-import io.github.diskria.utils.kotlin.BracketsType
-import io.github.diskria.utils.kotlin.Constants
-import io.github.diskria.utils.kotlin.extensions.wrapWithBrackets
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.kotlin.utils.BracketsType
+import io.github.diskria.kotlin.utils.Constants
+import io.github.diskria.kotlin.utils.extensions.wrapWithBrackets
 
 object RegexAssertion {
 

@@ -1,7 +1,7 @@
-package io.github.diskria.regex.dsl.primitives
+package io.github.diskria.kotlin.regex.dsl.primitives
 
-import io.github.diskria.regex.dsl.RegexPattern
-import io.github.diskria.utils.kotlin.Constants
+import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.utils.Constants
 
 object RegexEscape {
 

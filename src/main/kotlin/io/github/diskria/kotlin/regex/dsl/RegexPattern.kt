@@ -1,21 +1,21 @@
-package io.github.diskria.regex.dsl
+package io.github.diskria.kotlin.regex.dsl
 
-import io.github.diskria.regex.dsl.extensions.buildRegexPattern
-import io.github.diskria.regex.dsl.extensions.replaceRegex
-import io.github.diskria.regex.dsl.extensions.toRegexPattern
-import io.github.diskria.regex.dsl.primitives.RegexAnyChar
-import io.github.diskria.regex.dsl.primitives.RegexEscapeEnd
-import io.github.diskria.regex.dsl.primitives.RegexEscapeStart
-import io.github.diskria.utils.kotlin.BracketsType
-import io.github.diskria.utils.kotlin.Constants
-import io.github.diskria.utils.kotlin.EscapeMode
-import io.github.diskria.utils.kotlin.properties.toAutoNamedProperty
-import io.github.diskria.utils.kotlin.extensions.common.failWithDetails
-import io.github.diskria.utils.kotlin.extensions.common.failWithWrongUsage
-import io.github.diskria.utils.kotlin.extensions.common.modifyIf
-import io.github.diskria.utils.kotlin.extensions.primitives.orZero
-import io.github.diskria.utils.kotlin.extensions.wrap
-import io.github.diskria.utils.kotlin.extensions.wrapWithBrackets
+import io.github.diskria.kotlin.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.replaceRegex
+import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexAnyChar
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexEscapeEnd
+import io.github.diskria.kotlin.regex.dsl.primitives.RegexEscapeStart
+import io.github.diskria.kotlin.utils.BracketsType
+import io.github.diskria.kotlin.utils.Constants
+import io.github.diskria.kotlin.utils.EscapeMode
+import io.github.diskria.kotlin.utils.extensions.common.failWithDetails
+import io.github.diskria.kotlin.utils.extensions.common.failWithWrongUsage
+import io.github.diskria.kotlin.utils.extensions.common.modifyIf
+import io.github.diskria.kotlin.utils.extensions.primitives.orZero
+import io.github.diskria.kotlin.utils.extensions.wrap
+import io.github.diskria.kotlin.utils.extensions.wrapWithBrackets
+import io.github.diskria.kotlin.utils.properties.toAutoNamedProperty
 
 class RegexPattern(internal val rawPattern: String) {
 
