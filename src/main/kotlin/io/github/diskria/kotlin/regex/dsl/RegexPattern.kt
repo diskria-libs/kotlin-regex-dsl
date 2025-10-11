@@ -1,6 +1,6 @@
 package io.github.diskria.kotlin.regex.dsl
 
-import io.github.diskria.kotlin.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.common.buildRegexPattern
 import io.github.diskria.kotlin.regex.dsl.extensions.replaceRegex
 import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
 import io.github.diskria.kotlin.regex.dsl.primitives.RegexAnyChar
@@ -15,7 +15,7 @@ import io.github.diskria.kotlin.utils.extensions.common.modifyIf
 import io.github.diskria.kotlin.utils.extensions.primitives.orZero
 import io.github.diskria.kotlin.utils.extensions.wrap
 import io.github.diskria.kotlin.utils.extensions.wrapWithBrackets
-import io.github.diskria.kotlin.utils.properties.toAutoNamedProperty
+import io.github.diskria.kotlin.utils.properties.autoNamedProperty
 
 class RegexPattern(internal val rawPattern: String) {
 
@@ -38,8 +38,8 @@ class RegexPattern(internal val rawPattern: String) {
         when {
             min == null && max == null -> failWithWrongUsage(useInsteadThis = "zeroOrMore()")
             min != null && max != null && min > max -> {
-                val min by min.toAutoNamedProperty()
-                val max by max.toAutoNamedProperty()
+                val min by min.autoNamedProperty()
+                val max by max.autoNamedProperty()
                 failWithDetails("max must be > min", min, max)
             }
 

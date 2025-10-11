@@ -7,7 +7,7 @@ import io.github.diskria.kotlin.utils.Constants
 import io.github.diskria.kotlin.utils.extensions.common.failWithDetails
 import io.github.diskria.kotlin.utils.extensions.common.failWithInvalidValue
 import io.github.diskria.kotlin.utils.extensions.wrapWithBrackets
-import io.github.diskria.kotlin.utils.properties.toAutoNamedProperty
+import io.github.diskria.kotlin.utils.properties.autoNamedProperty
 
 object RegexBackReference {
 
@@ -23,7 +23,7 @@ object RegexBackReference {
     fun ofIndex(index: Int): RegexPattern {
         if (index <= 0) {
             failWithDetails("Regex group index can't be negative") {
-                val index by index.toAutoNamedProperty()
+                val index by index.autoNamedProperty()
                 listOf(index)
             }
         }

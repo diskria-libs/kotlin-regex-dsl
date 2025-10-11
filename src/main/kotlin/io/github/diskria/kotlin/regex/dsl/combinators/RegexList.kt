@@ -1,7 +1,7 @@
 package io.github.diskria.kotlin.regex.dsl.combinators
 
 import io.github.diskria.kotlin.regex.dsl.RegexPattern
-import io.github.diskria.kotlin.regex.dsl.extensions.buildRegexPattern
+import io.github.diskria.kotlin.regex.dsl.extensions.common.buildRegexPattern
 import io.github.diskria.kotlin.regex.dsl.extensions.toRegexPattern
 import io.github.diskria.kotlin.regex.dsl.groups.RegexGroup
 import io.github.diskria.kotlin.utils.Constants
