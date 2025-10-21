@@ -1,10 +1,5 @@
-import io.github.diskria.projektor.publishing.MavenCentral
-
 plugins {
-    `maven-publish`
-    signing
     alias(libs.plugins.projektor)
-    alias(libs.plugins.build.config)
     alias(libs.plugins.kotlin.jvm)
 }
 
@@ -13,7 +8,5 @@ dependencies {
 }
 
 projekt {
-    publishingTarget = MavenCentral
-
     kotlinLibrary()
 }

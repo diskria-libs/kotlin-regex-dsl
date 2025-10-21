@@ -1,4 +1,4 @@
-name: Release to Maven Central
+name: Release
 
 on:
   workflow_dispatch:
@@ -7,43 +7,14 @@ on:
       - "v*"
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-    env:
+  release:
+    uses: diskria/projektor/.github/workflows/release.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
       GPG_KEY: ${{ secrets.GPG_KEY }}
       GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-
-    steps:
-      - uses: actions/checkout@v5
-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: 25
-          distribution: temurin
-
-      - name: Build staging repo
-        run: ./gradlew clean publish --stacktrace
-        env:
-          GITHUB_OWNER: ${{ github.repository_owner }}
-          GITHUB_REPO: ${{ github.event.repository.name }}
-
-      - name: Detect main jar name
-        id: jar
-        run: |
-          JAR_FILE=$(ls build/libs/*.jar | awk '{ print length, $0 }' | sort -n | head -n1 | cut -d" " -f2-)
-          JAR_BASENAME=$(basename "$JAR_FILE" .jar)
-          echo "basename=$JAR_BASENAME" >> $GITHUB_OUTPUT
-
-      - name: Create bundle
-        run: |
-          cd build/staging-repo
-          zip -r "../${{ steps.jar.outputs.basename }}.zip" .
-
-      - name: Upload bundle to Sonatype Central
-        run: |
-          BEARER=$(echo -n "${{ secrets.SONATYPE_USERNAME }}:${{ secrets.SONATYPE_PASSWORD }}" | base64)
-          curl --fail --request POST \
-            --header "Authorization: Bearer $BEARER" \
-            --form bundle=@build/${{ steps.jar.outputs.basename }}.zip \
-            "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC"
+      SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+      SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+      GRADLE_PUBLISH_KEY: ${{ secrets.GRADLE_PUBLISH_KEY }}
+      GRADLE_PUBLISH_SECRET: ${{ secrets.GRADLE_PUBLISH_SECRET }}
