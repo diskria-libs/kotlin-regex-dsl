@@ -1,9 +1,8 @@
-# Kotlin Regex DSL
+# Kotlin Regex Dsl
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.diskria/kotlin-regex-dsl.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.diskria/kotlin-regex-dsl) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+A Kotlin DSL for building and working with regular expressions.
 
-A Kotlin DSL for building and working with regular expressions.  
-Provides a type-safe, composable API for patterns, groups, character classes, lookarounds, and more.
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.diskria/kotlin-regex-dsl.svg?label=Maven+Central&style=for-the-badge)](https://central.sonatype.com/artifact/io.github.diskria/kotlin-regex-dsl) [![License: MIT](https://img.shields.io/static/v1?message=MIT&color=yellow&label=License&style=for-the-badge)](https://spdx.org/licenses/MIT)
 
 ---
 
@@ -24,5 +23,6 @@ implementation("io.github.diskria:kotlin-regex-dsl:LATEST")
 
 ---
 
-## 📄 License
-This project is licensed under the [MIT License](LICENSE).
+## License
+
+This project is licensed under the [MIT License](https://spdx.org/licenses/MIT).
