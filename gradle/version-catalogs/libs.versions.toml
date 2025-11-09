@@ -2,7 +2,7 @@
 projektor = "4.+"
 
 kotlin = "2.0.21"
-kotlin-utils = "0.8.0"
+kotlin-utils = "0.8.2"
 
 [plugins]
 projektor = { id = "io.github.diskria.projektor", version.ref = "projektor" }
