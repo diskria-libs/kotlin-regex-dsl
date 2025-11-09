@@ -2,7 +2,7 @@
 
 A Kotlin DSL for building and working with regular expressions.
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.diskria/kotlin-regex-dsl.svg?label=Maven+Central&style=for-the-badge)](https://central.sonatype.com/artifact/io.github.diskria/kotlin-regex-dsl) [![License: MIT](https://img.shields.io/static/v1?message=MIT&color=yellow&label=License&style=for-the-badge)](https://spdx.org/licenses/MIT)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.diskria/kotlin-regex-dsl.svg?label=Maven+Central&style=for-the-badge)](https://central.sonatype.com/artifact/io.github.diskria/kotlin-regex-dsl) [![License: MIT](https://img.shields.io/static/v1?label=License&style=for-the-badge&message=MIT&color=yellow)](https://spdx.org/licenses/MIT)
 
 ---
 
