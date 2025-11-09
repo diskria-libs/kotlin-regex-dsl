@@ -8,5 +8,7 @@ dependencies {
 }
 
 projekt {
-    kotlinLibrary()
+    kotlinLibrary {
+        jvmTarget = JvmTarget.JVM_21
+    }
 }
