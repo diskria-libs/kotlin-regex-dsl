@@ -1,5 +1,10 @@
 package io.github.diskria.kotlin.regex.dsl.extensions
 
+import io.github.diskria.kotlin.regex.dsl.groups.NamedRegexGroup
+
+fun MatchResult.getValueOrNull(group: NamedRegexGroup): String? =
+    groups[group.name]?.value
+
 operator fun MatchResult?.component1(): MatchGroup? = this?.groups?.getOrNull(0)
 operator fun MatchResult?.component2(): MatchGroup? = this?.groups?.getOrNull(1)
 operator fun MatchResult?.component3(): MatchGroup? = this?.groups?.getOrNull(2)

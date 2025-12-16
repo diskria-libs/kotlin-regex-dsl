@@ -1,14 +1,18 @@
 package io.github.diskria.kotlin.regex.dsl.extensions
 
 import io.github.diskria.kotlin.regex.dsl.RegexPattern
+import io.github.diskria.kotlin.regex.dsl.groups.NamedRegexGroup
 import io.github.diskria.kotlin.regex.dsl.utils.MatchGroupValues
 import io.github.diskria.kotlin.utils.extensions.generics.foldChain
 
 fun String.findAll(regex: Regex): Sequence<Pair<String, MatchGroupValues>> =
     regex.findAll(this).map { it.value to MatchGroupValues(it) }
 
-fun String.findSingleMatchGroupValuesOrNull(regex: Regex): MatchGroupValues? =
+fun String.findSingleMatchOrNull(regex: Regex): MatchGroupValues? =
     regex.findAll(this).singleOrNull()?.let { MatchGroupValues(it) }
+
+fun String.findSingleGroupValueOrNull(group: NamedRegexGroup, regex: Regex): String? =
+    findSingleMatchOrNull(regex)?.matchResult?.getValueOrNull(group)
 
 fun String.toRegexPattern(): RegexPattern =
     RegexPattern(this)
