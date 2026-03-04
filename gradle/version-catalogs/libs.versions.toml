@@ -1,8 +1,8 @@
 [versions]
-projektor = "4.+"
+projektor = "5.+"
 
-kotlin = "2.0.21"
-kotlin-utils = "0.9.1"
+kotlin = "2.2.21"
+kotlin-utils = "0.10.1"
 
 [plugins]
 projektor = { id = "io.github.diskria.projektor", version.ref = "projektor" }
