@@ -9,7 +9,7 @@ pluginManagement {
 }
 
 plugins {
-    id("io.github.diskria.projektor.settings") version "5.+"
+    id("io.github.diskria.projektor.settings") version "6.+"
 }
 
 projekt {
